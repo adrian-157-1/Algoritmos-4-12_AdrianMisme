@@ -38,11 +38,11 @@ h3{
 
 /* SEPARADORES */
 hr{
+    margin: 0;
     border: none;
     height: 1px;
     box-shadow: 0 0 20px #4dddeb;
     background: linear-gradient(to right, transparent, #4dddeb, transparent);
-    margin: 200px 0;
 }
 
 
@@ -102,16 +102,17 @@ hr{
 
 /* SOBRE MI */
 #sobre-mi{
-    padding: 80px 20px;
     text-align: center;
 }
 
 .sobre-container{
+    background-color: #00f1;
+    padding: 150px 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px;
-    margin: 0 10%;
+    gap: 200px;
+    margin-bottom: 20%;
     font-family: 'cascadiamono';
 }
 
@@ -129,6 +130,11 @@ hr{
 
 
 /* HABILIDADES */
+
+#habilidades{
+    margin: 20% 0;
+}
+
 .skills-container{
     display: flex;
     justify-content: center;
@@ -169,6 +175,10 @@ hr{
 
 
 /* PROYECTOS */
+#proyectos{
+    margin: 20% 0;
+}
+
 .projects-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 280px));
@@ -222,6 +232,7 @@ hr{
 
 /* CONTACTO */
 footer{
+    background-color: black;
     text-align: center;
     padding: 30px;
     font-family: 'cascadiamono';
