@@ -24,7 +24,7 @@ def cargar():
 
         for j in range(cantidad):
             materia = input("ingrese nombre de materia : ")
-            nota = int(input("Ingrese nota : "))
+            nota = int(input("ingrese nota : "))
 
             lista.append((materia, nota))
 
@@ -47,7 +47,7 @@ def consulta(alumnos):
     dni = int(input("ingrese DNI del alumno a consultar : "))
 
     if dni in alumnos:
-        print("Materias y notas : ")
+        print("Materias y Notas : ")
 
         for materia, nota in alumnos[dni]:
             print(materia, nota)
