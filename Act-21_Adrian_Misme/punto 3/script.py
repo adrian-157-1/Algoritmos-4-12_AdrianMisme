@@ -14,7 +14,7 @@ similar a:
 empleados = [[&quot;juan&quot;,(2000,3000,4233)] , [&quot;ana&quot;,(3444,1000,5333)] , etc. ]
 
 """
-# Función para cargar los empleados
+
 def cargar():
     empleados = []
 
