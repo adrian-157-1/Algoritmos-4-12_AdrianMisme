@@ -1,0 +1,48 @@
+/*   index   */
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    background-image:
+        url("../img/fondo_inicio.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+nav{
+    
+    background-color: #095294aa;
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center; 
+    gap: 10px;
+}
+
+nav div{
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+}
+
+.logo{
+    height: 50px;
+    width: auto;
+}
+
+nav a{
+    
+    color: #eff8ff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+nav a:hover{
+    background-color: #eff8ff;
+    color: #095294;
+}
+
+
