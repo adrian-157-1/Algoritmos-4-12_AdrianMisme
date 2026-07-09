@@ -1,0 +1,246 @@
+body{
+    background-color: rgba(1, 6, 18, 0.933);
+    margin: 0;
+    color: white;
+}
+
+
+
+
+
+
+/* TITULOS */
+h1{
+    font-weight: 900;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 100px;
+    font-family: 'fredoka', sans-serif;
+}
+
+h2{
+    font-weight: 800;
+    font-size: 50px;
+    text-align: center;
+    margin: 60px 0;
+    font-family: 'fredoka', sans-serif;
+}
+
+h3{
+    font-family: 'fredoka';
+    font-weight: 800;
+}
+
+
+
+
+
+
+/* SEPARADORES */
+hr{
+    border: none;
+    height: 1px;
+    box-shadow: 0 0 20px #4dddeb;
+    background: linear-gradient(to right, transparent, #4dddeb, transparent);
+    margin: 200px 0;
+}
+
+
+
+
+
+
+/* LOGO */
+.logotipo{
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    display: block;
+}
+
+
+
+
+
+
+/* ENLACES */
+.enlaces{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    background-color: rgb(21, 77, 232);
+    padding: 15px;
+    font-family: 'cascadiamono';
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.enlaces a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.enlaces a:hover{
+    background-color: white;
+    color: rgb(21, 77, 232);
+    border-radius: 10px;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/* SOBRE MI */
+#sobre-mi{
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.sobre-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin: 0 10%;
+    font-family: 'cascadiamono';
+}
+
+.avatar{
+    height: 200px;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+/* HABILIDADES */
+.skills-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.card{
+    width: 230px;
+    background: #1116;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+    font-family: 'cascadiamono';
+}
+
+.card p{
+    word-break: break-word;
+    margin: 30px 20px;
+    font-size: 10px;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(21, 77, 232, 0.5);
+}
+
+.card img{
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+/* PROYECTOS */
+.projects-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 280px));
+    justify-content: center;
+    gap: 100px;
+    padding: 60px 20px;
+}
+
+.cardPro{
+    width: 300px;
+    background: rgba(37, 37, 37, 0.5);
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px 0;
+    transition: 0.3s;
+    font-family: 'cascadiamono';
+}
+
+.cardPro p{
+    margin: 0 20px;
+    font-size: 10px;
+}
+
+.cardPro:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(21, 77, 232, 0.5);
+}
+
+.cardPro img{
+    height: 150px;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.cardPro a{
+    color: #4dddeb;
+    text-decoration: none;
+}
+
+
+.cardPro a:hover{
+    color: #4dddeb;
+    border-radius: 10px;
+    text-decoration: underline;
+}
+
+
+
+
+
+/* CONTACTO */
+footer{
+    text-align: center;
+    padding: 30px;
+    font-family: 'cascadiamono';
+    font-size: 10px;
+}
+
+.contacto-links{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contacto-links img{
+    width: 30px;
+    height: 30px;
+    transition: 0.5s;
+}
+
+.contacto-links img:hover{
+    transform: scale(1.25);
+}
