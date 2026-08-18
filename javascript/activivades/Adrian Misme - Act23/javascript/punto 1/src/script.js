@@ -22,34 +22,96 @@ Salida Esperada: Confirmación de reserva para las columnas 2, 3 y 4.
 
 */
 
+let sala = [
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0]
+]
+console.log(sala)
 
-    sala = [
-        [0,0,0,0,0,0],
-        [0,0,0,0,0,0],
-        [0,0,0,0,0,0],
-        [0,0,0,0,0,0]
-    ]
+let fila = parseInt(prompt("ingrese en que fila reserva los asientos : "))
+let cantidad = parseInt(prompt("ingrese la cantidad de asientos : "))
+
 
 function reservar_consecutivos(sala, fila, cantidad){
+    let ocupado=1
     
-    let fila = parseInt(prompt("ingrese en que fila reserva los asientos : "))
-    let cantidad = parseInt(prompt("ingrese la cantidad de asientos : "))
     for(let i=0; i<cantidad; i++){
-        let columna = parseInt(prompt("ingrese la columna que quiere ocupar : "))
-    }
-
-    for(let i=0; i<cantidad; i++){
-        if(sala[fila[columna]] == 0){
-
-            console.log("los asientos fueron ocupados con exito")
-            sala[fila[columna]].pop()
-            sala[fila[columna]].unshift(1)
+        let columna = parseInt(prompt("ingrese la asiento que quiere ocupar : "))
+        if(sala[fila][columna] == 0){
+            sala[fila][columna]=ocupado
         }
-    
 
+        if(sala[fila][columna] == 1){
+            columna = parseInt(prompt("este asiento ya esta ocupado ingrese otro : "))
+        }
     }
 
-
-
-
+    console.log(sala)
 }
+
+reservar_consecutivos(sala, fila, cantidad)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let sala = [
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0]
+];
+
+console.log(sala);
+
+let fila = parseInt(prompt("Ingrese en qué fila reserva los asientos: "));
+let cantidad = parseInt(prompt("Ingrese la cantidad de asientos: "));
+
+
+function reservar_consecutivos(sala, fila, cantidad) {
+
+    let consecutivos = 0;
+    let inicio = -1;
+
+    for (let columna = 0; columna < sala[fila].length; columna++) {
+
+        if (sala[fila][columna] == 0) {
+            consecutivos++;
+
+            if (consecutivos == 1) {
+                inicio = columna;
+            }
+
+            if (consecutivos == cantidad) {
+
+                for (let i = inicio; i < inicio + cantidad; i++) {
+                    sala[fila][i] = 1;
+                }
+
+                console.log("Reserva realizada correctamente.");
+                console.log(sala);
+                return;
+            }
+
+        } else {
+            consecutivos = 0;
+            inicio = -1;
+        }
+    }
+
+    console.log("No hay suficientes asientos consecutivos");
+}
+
+reservar_consecutivos(sala, fila, cantidad);

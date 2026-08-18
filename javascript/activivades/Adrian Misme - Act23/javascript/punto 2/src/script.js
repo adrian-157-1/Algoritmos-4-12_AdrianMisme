@@ -18,3 +18,17 @@ TX104:I:3000&quot; Salida Esperada:
 ● Transacciones sospechosas: [&#39;TX103&#39;]
 
 */
+
+
+let lista=[0,0,0,0]
+let ocupado=1
+
+console.log(lista)
+
+let n=parseInt(prompt("ingrese lugar a ocupar : "))
+
+if (lista[n] == 0){
+    lista[n]=ocupado
+}
+
+console.log(lista)
