@@ -9,3 +9,21 @@ Además:
  En consola debe mostrarse en todo momento la cantidad de productos
 actuales en la lista.
 */
+
+
+
+let boton = document.getElementById("boton")
+let lista = document.getElementById("lista")
+cant=0
+
+boton.addEventListener("click", function()
+{
+    cant++
+    let texto = document.getElementById('texto').value
+    let nuevo = document.createElement("li")
+    nuevo.textContent = texto
+    document.getElementById("lista").appendChild(nuevo)
+    
+}
+)
+

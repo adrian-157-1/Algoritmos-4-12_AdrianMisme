@@ -9,3 +9,14 @@ modificado con JavaScript&quot;.
 3. Usar getElementById() para seleccionar el párrafo y modificar su contenido con
 textContent.
 */
+
+
+let texto = document.getElementById("texto")
+let boton = document.getElementById("boton")
+
+boton.addEventListener("click" , function()
+{
+    texto.textContent="El texto ha sido modificado con JavaScript"
+}
+)
+

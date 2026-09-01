@@ -10,3 +10,18 @@ añadirlo a la lista.
 4. Cada vez que se agrega un nuevo elemento, se debe mostrar una alerta
 indicando: &quot;Se ha añadido un nuevo elemento&quot;.
 */
+
+let boton = document.getElementById("boton")
+let lista = document.getElementById("lista")
+
+
+boton.addEventListener("click", function()
+{
+    let nuevo = document.createElement("li")
+    nuevo.textContent = "Nuevo Elemento"
+    alert("Se ha añadido un nuevo elemento")
+    document.getElementById("lista").appendChild(nuevo)
+    
+}
+)
+
