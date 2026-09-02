@@ -24,15 +24,18 @@ boton.addEventListener("click", function()
 
     if(temp<10){
         texto.textContent = "Hace Frio"
+        texto.style.color = "blue"
         console.log("hubo Frio el : ", fecha)
     }
     if(temp>=10 && temp<=25){
         texto.textContent = "Clima Agradable"
+        texto.style.color = "green"
         console.log("hubo un Clima Agradable el :", fecha)
     }
 
     if(temp>25){
         texto.textContent = "Hace Calor"
+        texto.style.color = "red"
         console.log("hubo Calor el : ", fecha)
     }
     

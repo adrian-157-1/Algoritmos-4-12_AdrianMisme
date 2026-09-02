@@ -20,10 +20,18 @@ boton.addEventListener("click", function()
 {
     cant++
     let texto = document.getElementById('texto').value
-    let nuevo = document.createElement("li")
+    let nuevo = document.createElement("li") 
     nuevo.textContent = texto
     document.getElementById("lista").appendChild(nuevo)
+    console.log("cantidad de productos : ", cant)
+
+
     
+    nuevo.addEventListener("click", function(){ 
+        cant--
+        nuevo.remove()
+        console.log("cantidad de productos : ", cant)
+    })
+
 }
 )
-
