@@ -6,13 +6,11 @@ un evento).
 */
 
 
-let btn = document.getElementById("btn")
-
-btn.addEventListener("click", function(){
+function contatenar(){
 
     let nombre = document.getElementById("nombre").value
     let apellido = document.getElementById("apellido").value
     let texto = document.getElementById("texto")
 
     texto.textContent = nombre +" "+ apellido
-})
+}

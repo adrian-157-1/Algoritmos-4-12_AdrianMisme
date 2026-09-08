@@ -10,9 +10,12 @@ string son iguales.
 
 
 
-let btn = document.getElementById("btn")
 
-btn.addEventListener("click", function(){
+
+
+
+
+function validar(){
 
     const cont1 = document.getElementById("cont1").value
     const cont2 = document.getElementById("cont2").value
@@ -26,4 +29,4 @@ btn.addEventListener("click", function(){
         texto.textContent = "ERROR, las contraseñas no son iguales"
         texto.style.color = "red"
     }
-})
+}

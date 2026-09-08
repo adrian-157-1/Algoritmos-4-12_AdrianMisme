@@ -7,13 +7,19 @@
     <script src="src/script.js" defer></script>
 </head>
 <body>
-    <h1>Ejercicio 04: Lista de Compras Dinámica</h1>
-    <input type="text" id="texto">
-    <input type="button" id="boton" value="agregar">
+    <h1>Ejercicio 04:</h1>
 
-    
-    <ul id="lista">
-    </ul>
+    <form>
+        <p>pizza :
+            <select id="pizza" onchange="tipos()" >
+            <option value="muzzarela">muzarela</option>
+            <option value="queso">queso</option>
+            <option value="jamon">jamon</option>
+            <option value="morrones">morrones</option>
+            </select>
+        </p>
+        <input type="text" id="precio" value="precio">
+    </form>
 
 </body>
 </html>

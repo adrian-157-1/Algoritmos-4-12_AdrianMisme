@@ -11,3 +11,7 @@ tipo TEXT.
 */ 
 
 
+
+calcular(){
+    let total = document.getElementById('procesador')
+}

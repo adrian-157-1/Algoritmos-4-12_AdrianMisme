@@ -5,3 +5,10 @@ una, mostrar en un objeto de tipo TEXT el precio de la misma.
 */
 
 
+
+ function tipos() {
+            let pizza = document.getElementById("pizza");
+            let precio = document.getElementById("precio");
+
+            precio.value =  pizza.value + ": $";
+        }

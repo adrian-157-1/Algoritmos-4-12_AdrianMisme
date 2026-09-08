@@ -7,11 +7,37 @@
     <script src="src/script.js" defer></script>
 </head>
 <body>
-    <h1>Ejercicio 05: Control de Temperatura</h1>
+    <h1>Ejercicio 05:</h1>
 
+    <form>
+        <p> procesador:
+            <select id="procesador" onchange="procesador()" >
+            <option value="400">Intel I3 - $400</option>
+            <option value="600">Intel I5 - $600</option>
+            <option value="800">Intel I7 - $800</option>
+            </select>
+        </p>
 
-    <input type="number" id="temp">
-    <input type="button" id="boton" value="cerificar"></input>
-    <p id="texto"></p>
+        <p> monitor:
+            <select id="monitor" onchange="monitor()" >
+            <option value="250">Samsung 20 - $250</option>
+            <option value="350">Samsung 22 - $350</option>
+            <option value="550">Samsung 26 - $550</option>
+            </select>
+        </p>
+
+        <p> disco duro:
+            <select id="disco_duro" onchange="disco_duro()" >
+            <option value="300">500 Gb - $300</option>
+            <option value="440">1 Tb - $440</option>
+            <option value="500">3 Tb - $500</option>
+            </select>
+        </p>
+
+        <input type="button" value="calcular" onclick="calcular()">
+
+        <input type="text" id="precio" value="precio">
+    </form>
+
 </body>
 </html>

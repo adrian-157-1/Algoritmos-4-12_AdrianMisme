@@ -3,12 +3,14 @@
 Mostrar un mensaje indicando qué botón se presionó.
 */
 
-let num = [1,2,3]
+function incrementar1() {
+    alert("se presiono el boton 1")
+}
 
-for(let i=0; i<3; i++){
-    let boton = document.getElementById(1,2,3)
-    
-    boton.addEventListener("click", function() {
-        alert("se presiono el boton "+ boton[i])
-    })
+function incrementar2() {
+    alert("se presiono el boton 2")
+}
+
+function incrementar3() {
+    alert("se presiono el boton 3")
 }
