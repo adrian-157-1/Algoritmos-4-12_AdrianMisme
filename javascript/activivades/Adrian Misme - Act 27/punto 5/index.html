@@ -11,32 +11,32 @@
 
     <form>
         <p> procesador:
-            <select id="procesador" onchange="procesador()" >
-            <option value="400">Intel I3 - $400</option>
-            <option value="600">Intel I5 - $600</option>
-            <option value="800">Intel I7 - $800</option>
+            <select id="procesador" >
+            <option value="Intel-I3">Intel I3 - $400</option>
+            <option value="Intel-I5">Intel I5 - $600</option>
+            <option value="Intel-I7">Intel I7 - $800</option>
             </select>
         </p>
 
         <p> monitor:
-            <select id="monitor" onchange="monitor()" >
-            <option value="250">Samsung 20 - $250</option>
-            <option value="350">Samsung 22 - $350</option>
-            <option value="550">Samsung 26 - $550</option>
+            <select id="monitor" >
+            <option value="Samsung-20">Samsung 20 - $250</option>
+            <option value="Samsung-22">Samsung 22 - $350</option>
+            <option value="Samsung-26">Samsung 26 - $550</option>
             </select>
         </p>
 
         <p> disco duro:
-            <select id="disco_duro" onchange="disco_duro()" >
-            <option value="300">500 Gb - $300</option>
-            <option value="440">1 Tb - $440</option>
-            <option value="500">3 Tb - $500</option>
+            <select id="disco_duro" >
+            <option value="500-Gb">500 Gb - $300</option>
+            <option value="1-Tb">1 Tb - $440</option>
+            <option value="3-Tb">3 Tb - $500</option>
             </select>
         </p>
 
         <input type="button" value="calcular" onclick="calcular()">
 
-        <input type="text" id="precio" value="precio">
+        <input type="text" id="texto" value="precio">
     </form>
 
 </body>

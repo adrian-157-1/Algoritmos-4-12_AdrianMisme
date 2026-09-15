@@ -6,9 +6,19 @@ una, mostrar en un objeto de tipo TEXT el precio de la misma.
 
 
 
- function tipos() {
-            let pizza = document.getElementById("pizza");
-            let precio = document.getElementById("precio");
+function tipos(){
+    let texto = document.getElementById("texto")
+    let pizza = document.getElementById("pizza")
+    let tipo = ["muzzarela", "queso", "jamon", "morrones"]
+    let precio = [100,300,200,500]
 
-            precio.value =  pizza.value + ": $";
+    for(let i=0; i<3; i++){
+
+        if(tipo[i] ==  pizza.value){
+            texto.value = "pizza de " + pizza.value +": $ "+ precio[i]
         }
+    }
+
+}
+
+
