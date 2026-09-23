@@ -13,7 +13,7 @@ Ejemplo de Entrada: &quot;AAABBCDDDD&quot; Salida Esperada: &quot;A3B2C1D4&quot;
 
 */
 
-let texto = prompt("ingrese una cadena de texto en mayúsculas:");
+let texto = prompt("ingrese una cadena de texto en mayúsculas:")
 
 function comprimir_rle(texto) {
     let resultado = ""
@@ -36,4 +36,4 @@ function comprimir_rle(texto) {
 
 let resultado = comprimir_rle(texto)
 
-console.log(resultado);
+console.log(resultado)
