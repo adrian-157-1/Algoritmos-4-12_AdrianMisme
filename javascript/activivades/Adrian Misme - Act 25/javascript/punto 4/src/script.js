@@ -19,7 +19,7 @@ function cargar_inventario() {
     let inventario = []
 
     for (let i = 0; i < 5; i++) {
-        let nombre = prompt("ingrese nombre del artIculo: ")
+        let nombre = prompt("ingrese nombre del articulo: ")
         let precio = parseInt(prompt("ingrese precio: "))
         let stock = parseInt(prompt("ingrese stock: "))
 
@@ -32,7 +32,7 @@ function cargar_inventario() {
 
 function imprimir_listado(inventario) {
     for (let [nombre, precio, stock] of inventario) {
-        console.log("ArtIculo: ", nombre)
+        console.log("Articulo: ", nombre)
         console.log("Precio: ", precio)
         console.log("Stock: ", stock)
         console.log("=======================")
