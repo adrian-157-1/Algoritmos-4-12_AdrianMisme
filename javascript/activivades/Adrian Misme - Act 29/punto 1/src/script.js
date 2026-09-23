@@ -10,3 +10,24 @@ LocalStorage y aplicarse automáticamente (mostrar el nombre del usuario y
 cambiar el color de fondo).
 */
 
+function guardar() {
+    const nombre = document.getElementById("nombre").value
+    const color = document.getElementById("color").value
+    localStorage.setItem("nombre", nombre)
+    localStorage.setItem("color", color)
+    aplicar()
+}
+function aplicar() {
+    const nombreG = localStorage.getItem("nombre")
+    const colorG = localStorage.getItem("color")
+    if(nombreG) {
+        document.getElementById("nombre").value = nombreG
+        document.getElementById("mensaje").textContent =
+            "¡Hola, " + nombreG + "!"
+    }
+    
+    document.body.style.backgroundColor = colorG
+    document.getElementById("color").value = colorG
+    
+}
+document.addEventListener("DOMContentLoaded", aplicar)

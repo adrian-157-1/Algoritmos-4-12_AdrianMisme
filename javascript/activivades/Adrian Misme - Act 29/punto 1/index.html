@@ -4,14 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="src/styles.css">
     <script src="src/script.js" defer></script>
 </head>
 <body>
-    <h1>Ejercicio 01:</h1>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferencias de usuario</title>
 
-    <input type="button" onclick="incrementar1()" id="1" value="1">
-    <input type="button" onclick="incrementar2()" id="2" value="2">
-    <input type="button" onclick="incrementar3()" id="3" value="3">
+<body>
+    <h1>Ejercicio 1</h1>
+
+    <h2>Preferencias de usuario</h2>
+
+    <p>
+        Ingrese su nombre:
+        <input type="text" id="nombre" >
+    </p>
+
+    <p>
+        Selecciona tu color de fondo:
+        <select id="color">
+            <option value="red">Rojo</option>
+            <option value="blue">Azul</option>
+            <option value="green">Verde</option>
+            <option value="pink">Rosa</option>
+            <option value="yellow">Amarillo</option>
+        </select>
+    </p>
+    <br>
+
+    <button onclick="guardar()">Guardar preferencias</button>
+
+    <p id="mensaje"></p>
+
+</body>
+</html>
+
 
 </body>
 </html>

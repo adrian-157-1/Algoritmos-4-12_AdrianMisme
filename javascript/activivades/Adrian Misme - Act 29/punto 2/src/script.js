@@ -11,3 +11,20 @@ un evento).
 */
 
 
+
+let cantidad = parseInt(localStorage.getItem("cantidad")) || 0
+
+
+document.getElementById("cantidad").textContent = cantidad;
+
+document.getElementById("producto1").addEventListener("click", agregar);
+document.getElementById("producto2").addEventListener("click", agregar);
+document.getElementById("producto3").addEventListener("click", agregar);
+
+function agregar() {
+    cantidad++;
+
+    localStorage.setItem("cantidad", cantidad);
+
+    document.getElementById("cantidad").textContent = cantidad;
+}

@@ -16,6 +16,29 @@ mediante removeItem() y limpie el contenido del DOM.
 
 
 
+let nota = sessionStorage.getItem("nota")
 
+if (nota) {
+    document.getElementById("mensaje").textContent = nota
+}
+
+document.getElementById("guardar").addEventListener("click", guardarNota)
+document.getElementById("borrar").addEventListener("click", borrarNota)
+
+
+function guardarNota() {
+    let nota = document.getElementById("nota").value
+
+    sessionStorage.setItem("nota", nota);
+
+    document.getElementById("mensaje").textContent = nota
+}
+
+
+function borrarNota() {
+    sessionStorage.removeItem("nota");
+
+    document.getElementById("mensaje").textContent = ""
+}
 
 
