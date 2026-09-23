@@ -21,13 +21,13 @@ la siguiente será Lucía (Nivel 3).
 
 let cola_espera = [];
 
-let cantidad = parseInt(prompt("Ingrese cuantos pacientes hay: "));
+let cantidad = parseInt(prompt("ingrese cuantos pacientes hay: "))
 
 for (let i = 0; i < cantidad; i++) {
-    let nombre = prompt("Ingrese el nombre del paciente: ");
-    let prioridad = parseInt(prompt("Ingrese la prioridad (1, 2 o 3): "));
+    let nombre = prompt("ingrese el nombre del paciente: ");
+    let prioridad = parseInt(prompt("ingrese la prioridad (1, 2 o 3): "))
 
-    cola_espera.push([nombre, prioridad]);
+    cola_espera.push([nombre, prioridad])
 }
 
 
@@ -51,6 +51,6 @@ function atender_siguiente(cola_espera) {
 }
 
 
-console.log(atender_siguiente(cola_espera));
+console.log(atender_siguiente(cola_espera))
 
-console.log(atender_siguiente(cola_espera));
+console.log(atender_siguiente(cola_espera))
