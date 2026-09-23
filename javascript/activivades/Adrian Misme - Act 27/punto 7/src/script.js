@@ -10,11 +10,11 @@ function elegidos() {
     let deportes = ""
 
     if (document.getElementById("Futbol").checked) {
-        deportes = deportes + "Fútbol "
+        deportes = deportes + "Futbol "
     }
 
     if (document.getElementById("Basquet").checked) {
-        deportes = deportes + "Básquet "
+        deportes = deportes + "Basquet "
     }
 
     if (document.getElementById("Tenis").checked) {
