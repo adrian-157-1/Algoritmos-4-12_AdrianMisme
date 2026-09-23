@@ -8,7 +8,7 @@ distintos programas que administran web-mail (Gmail, Hotmail y Yahoo!)
 
 
 function pintar(objeto, col){
-    objeto.style.backgroundColor = col;
+    objeto.style.backgroundColor = col
 }
 
 
