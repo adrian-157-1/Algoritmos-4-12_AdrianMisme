@@ -15,3 +15,53 @@ de miembros que posee cada uno.
 gremio está registrado. Informar el gremio encontrado o indicar si el jugador es
 &quot;Solitario&quot; (no pertenece a ningún clan).
 """
+
+
+gremios = {}
+
+def registrar_gremios():
+    for i in range(3):
+        g = input("ingrese nombre del gremio: ")
+
+        cantidad = int(input("ingrese cantidad de integrantes: "))
+
+        jugadores = []
+
+        for j in range(cantidad):
+            nombre = input("ingrese nombre del jugador: ")
+
+            jugadores.append(nombre)
+
+        gremios[g] = jugadores
+
+
+def listar_clanes():
+    for g in gremios:
+        cantidad = len(gremios[g])
+
+        print(g, "-", cantidad, "miembros")
+
+
+def buscar_jugador():
+    jugador = input("ingrese nombre del jugador a buscar: ")
+
+    encontrado = False
+
+    for g in gremios:
+        if jugador in gremios[g]:
+
+            print(jugador, "pertenece al gremio", g)
+
+            encontrado = True
+
+    if encontrado == False:
+        print(jugador, "es Solitario")
+
+
+registrar_gremios()
+
+print("LISTA DE CLANES:")
+listar_clanes()
+
+print("BUSCAR JUGADOR:")
+buscar_jugador()

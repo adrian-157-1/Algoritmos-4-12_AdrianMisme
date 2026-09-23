@@ -21,12 +21,48 @@ Salida Esperada: Confirmación de reserva para las columnas 2, 3 y 4.
 """
 
 sala = [
-    [0,0,0,0,0,0],
-    [0,0,0,0,0,0],
-    [0,0,0,0,0,0],
-    [0,0,0,0,0,0]
+    [0,0,1,0,0,1],
+    [0,0,0,0,0,1],
+    [0,1,1,0,0,0],
+    [0,0,0,0,1,0]
 ]
 
 fila=int(input("ingrese numero de fila : "))
 cantidad=int(input("ingrese la cantidad de asientos : "))
-columnas=int(input("ingrese las columnas : "))
+
+
+def reservar_consecutivos(sala, fila, cantidad):
+    if fila < 0 or fila >= len(sala) or cantidad <= 0:
+        return "La fila o la cantidad no es correcta"
+
+    consecutivos = 0
+    inicio = -1
+
+    for columna in range(len(sala[fila])):
+        if sala[fila][columna] == 0:
+            consecutivos += 1
+
+            if consecutivos == 1:
+                inicio = columna
+
+            if consecutivos == cantidad:
+                columnas = ""
+
+                for asiento in range(inicio, inicio + cantidad):
+                    sala[fila][asiento] = 1
+                    columnas += str(asiento)
+
+                    if asiento < inicio + cantidad - 1:
+                        columnas += ", "
+
+                return f"Reserva exitosa en la fila {fila}, asientos: {columnas}"
+        else:
+            consecutivos = 0
+            inicio = -1
+
+    return "No fue posible realizar la reserva: no hay suficientes asientos consecutivos"
+
+
+resultado = reservar_consecutivos(sala, fila, cantidad)
+print(resultado)
+print(sala)

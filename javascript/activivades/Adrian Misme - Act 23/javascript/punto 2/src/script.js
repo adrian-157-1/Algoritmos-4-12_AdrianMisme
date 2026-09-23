@@ -19,16 +19,45 @@ TX104:I:3000&quot; Salida Esperada:
 
 */
 
+const transacciones = []
 
-let lista=[0,0,0,0]
-let ocupado=1
+function procesar_transacciones(cadena_texto) {
+    let balance = 0
+    let sospechosas = []
 
-console.log(lista)
+    for (let i = 0; i < cadena_texto.length; i++) {
+        let id = cadena_texto[i][0]
+        let tipo = cadena_texto[i][1]
+        let monto = cadena_texto[i][2]
 
-let n=parseInt(prompt("ingrese lugar a ocupar : "))
+        if (tipo === "I" || tipo === "i") {
+            balance = balance + monto
+        } 
+        else if (tipo === "E" || tipo === "e") {
+            balance = balance - monto
 
-if (lista[n] == 0){
-    lista[n]=ocupado
+            if (monto > 50000) {
+                sospechosas.push(id)
+            }
+        }
+    }
+
+    return { balance, sospechosas }
 }
 
-console.log(lista)
+let cantidad = parseInt(prompt("Cantidad de transacciones:"))
+
+for (let i = 0; i < cantidad; i++) {
+    let id = prompt("ID:")
+    let tipo = prompt("Tipo:")
+    let monto = parseInt(prompt("Monto:"))
+
+    transacciones.push([id, tipo, monto])
+}
+for(let i=0; i<=transacciones.length; i++){
+    console.log(transacciones[i][0], ":", transacciones[i][1], ":", transacciones[i][2])
+}
+
+const resultado = procesar_transacciones(transacciones)
+console.log("Balance final: ", resultado.balance)
+console.log("Transacciones sospechosas: ", resultado.sospechosas)

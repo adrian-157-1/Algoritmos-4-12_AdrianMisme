@@ -13,5 +13,39 @@ variables individuales (máxima y mínima) y mostrarlas en pantalla con un mensa
 descriptivo.
 */
 
+function carga() {
+    let temperaturas = []
 
-  
+    for (let i = 0; i < 6; i++) {
+        let temp = parseInt(prompt("ingrese la temperatura: "))
+        temperaturas.push(temp)
+    }
+
+    return temperaturas
+}
+
+
+function procesar_extremos(temperaturas) {
+    let maximo = temperaturas[0]
+    let minimo = temperaturas[0]
+
+    for (let temp of temperaturas) {
+        if (temp > maximo) {
+            maximo = temp
+        }
+
+        if (temp < minimo) {
+            minimo = temp
+        }
+    }
+
+    return [maximo, minimo]
+}
+
+
+let temperaturas = carga()
+
+let [maxima, minima] = procesar_extremos(temperaturas)
+
+console.log("Temperatura maxima: ", maxima)
+console.log("Temperatura minima: ", minima)

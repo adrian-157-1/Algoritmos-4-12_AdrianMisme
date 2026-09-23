@@ -17,3 +17,53 @@ de cada piloto en sus 3 vueltas e imprimir su nombre junto a dicho promedio.
 toda la clasificación (el tiempo individual más bajo dentro de cualquier tupla),
 detallando a qué piloto le pertenece.
 */
+
+function cargar_pilotos() {
+    let pilotos = []
+
+    for (let i = 0; i < 4; i++) {
+        let nombre = prompt("ingrese nombre del piloto: ")
+
+        let tiempo1 = parseint(prompt("ingrese tiempo 1: "))
+        let tiempo2 = parseint(prompt("ingrese tiempo 2: "))
+        let tiempo3 = parseint(prompt("ingrese tiempo 3: "))
+
+        pilotos.push([nombre, [tiempo1, tiempo2, tiempo3]])
+    }
+
+    return pilotos
+}
+
+
+function calcular_promedios(pilotos) {
+    for (let [nombre, tiempos] of pilotos) {
+        let promedio = (tiempos[0] + tiempos[1] + tiempos[2]) / 3
+
+        console.log("Piloto: ", nombre)
+        console.log("Promedio: ", promedio)
+    }
+}
+
+
+function mejor_vuelta(pilotos) {
+    let mejor = pilotos[0][1][0]
+    let piloto_mejor = pilotos[0][0]
+
+    for (let [nombre, tiempos] of pilotos) {
+        for (let tiempo of tiempos) {
+            if (tiempo < mejor) {
+                mejor = tiempo
+                piloto_mejor = nombre
+            }
+        }
+    }
+
+    console.log("Mejor vuelta: ", mejor, "seg")
+    console.log("Piloto: ", piloto_mejor)
+}
+
+let pilotos = cargar_pilotos()
+
+calcular_promedios(pilotos)
+
+mejor_vuelta(pilotos)

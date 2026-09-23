@@ -17,3 +17,46 @@ de cada piloto en sus 3 vueltas e imprimir su nombre junto a dicho promedio.
 toda la clasificación (el tiempo individual más bajo dentro de cualquier tupla),
 detallando a qué piloto le pertenece.
 """
+def cargar_pilotos():
+    pilotos = []
+
+    for i in range(4):
+        nombre = input("ingrese el nombre del piloto: ")
+
+        tiempo1 = int(input("ingrese el tiempo 1: "))
+        tiempo2 = int(input("ingrese el tiempo 2: "))
+        tiempo3 = int(input("ingrese el tiempo 3: "))
+
+        pilotos.append([nombre, (tiempo1, tiempo2, tiempo3)])
+
+    return pilotos
+
+
+def calcular_promedios(pilotos):
+    for nombre, tiempos in pilotos:
+        promedio = (tiempos[0] + tiempos[1] + tiempos[2]) / 3
+
+        print("Piloto: ", nombre)
+        print("Promedio: ", promedio)
+
+
+def mejor_vuelta(pilotos):
+    mejor = pilotos[0][1][0]
+    piloto_mejor = pilotos[0][0]
+
+    for nombre, tiempos in pilotos:
+        for tiempo in tiempos:
+            if tiempo < mejor:
+                mejor = tiempo
+                piloto_mejor = nombre
+
+    print("Mejor vuelta: ", mejor, "seg")
+    print("Piloto:", piloto_mejor)
+
+
+
+pilotos = cargar_pilotos()
+
+calcular_promedios(pilotos)
+
+mejor_vuelta(pilotos)

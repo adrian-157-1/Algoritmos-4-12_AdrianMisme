@@ -14,3 +14,46 @@ barrio.
 Emergencia&quot; únicamente para las estaciones cuyo promedio de contaminación
 supere las 400 ppm.
 """
+
+sensores = {}
+
+def cargar_sensores():
+    for i in range(3):
+        barrio = input("ingrese nombre de la estación: ")
+
+        lecturas = []
+
+        for j in range(3):
+            lectura = float(input("ingrese lectura de CO2: "))
+
+            lecturas.append(lectura)
+
+        sensores[barrio] = lecturas
+
+def reportar_promedios():
+    for barrio in sensores:
+        lecturas = sensores[barrio]
+
+        promedio = sum(lecturas) / len(lecturas)
+
+        print(barrio, "- Promedio:", promedio, "ppm")
+
+
+def alerta_ambiental():
+
+    for barrio in sensores:
+        lecturas = sensores[barrio]
+
+        promedio = sum(lecturas) / len(lecturas)
+
+        if promedio > 400:
+            print("Protocolo de Eergencia:", barrio)
+
+
+cargar_sensores()
+
+print("PROMEDIOS:")
+reportar_promedios()
+
+print("ALERTAS:")
+alerta_ambiental()

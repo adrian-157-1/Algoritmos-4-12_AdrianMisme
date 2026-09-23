@@ -14,5 +14,48 @@ $50.000.
 Ejemplo de Entrada: &quot;TX101:I:120000, TX102:E:15000, TX103:E:85000,
 TX104:I:3000&quot; Salida Esperada:
 ● Balance final: $23.000
-● Transacciones sospechosas: [&#39;TX103&#39;]
+● Transacciones sospechosas: ['TX103']
 """
+
+transacciones = []
+
+def procesar_transacciones(cadena_texto):
+    balance = 0
+    sospechosas = []
+
+    for i in range(len(cadena_texto)):
+        id = cadena_texto[i][0]
+        tipo = cadena_texto[i][1]
+        monto = cadena_texto[i][2]
+
+        if tipo == "I" or tipo == "i":
+            balance = balance + monto
+        
+        
+        elif tipo == "E" or tipo == "e":
+            balance = balance - monto
+            if monto > 50000:
+                sospechosas.append(id)
+            
+        
+    
+
+    return balance, sospechosas 
+
+
+cantidad = int(input("Cantidad de transacciones:"))
+
+for x in range(cantidad):
+    id = input("ID:")
+    tipo = input("Tipo:")
+    monto = int(input("Monto:"))
+
+    transacciones.append([id, tipo, monto])
+
+for i in range(len(transacciones)):
+    print(transacciones[i][0], ":", transacciones[i][1], ":", transacciones[i][2])
+
+
+balance, sospechosas = procesar_transacciones(transacciones)
+print("Balance final: ", balance)
+print("Transacciones sospechosas: ", sospechosas)

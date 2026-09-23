@@ -10,3 +10,25 @@ Requisitos:
 apariciones consecutivas.
 Ejemplo de Entrada: &quot;AAABBCDDDD&quot; Salida Esperada: &quot;A3B2C1D4&quot;
 """
+
+texto = input("Ingrese una cadena de texto en mayúsculas: ")
+
+def comprimir_rle(texto):
+    resultado = ""
+    cantidad = 1
+
+    for i in range(len(texto)):
+
+        if i + 1 < len(texto) and texto[i] == texto[i + 1]:
+            cantidad = cantidad + 1
+
+        else:
+            resultado = resultado + texto[i] + f"{cantidad}"
+            cantidad = 1
+
+    return resultado
+
+
+resultado = comprimir_rle(texto)
+
+print(resultado)

@@ -14,3 +14,47 @@ artículos desempaquetando la tupla de manera directa en el bucle for.
 4. Alerta de Reposición: Imprimir el nombre de todos aquellos artículos cuyo stock
 sea menor o igual a 10 unidades para emitir un aviso de compra urgente.
 """
+
+def cargar_inventario():
+    inventario = []
+
+    for i in range(5):
+        nombre = input("ingrese el nombre del articulo: ")
+        precio = int(input("ingrese el precio: "))
+        stock = int(input("ingrese el stock: "))
+
+        inventario.append((nombre, precio, stock))
+
+    return inventario
+
+
+def imprimir_listado(inventario):
+    for nombre, precio, stock in inventario:
+        print("Articulo: ", nombre)
+        print("Precio: ", precio)
+        print("Stock: ", stock)
+        print("=====================")
+
+
+def valor_inventario(inventario):
+    total = 0
+
+    for nombre, precio, stock in inventario:
+        total = total + precio * stock
+
+    print("Valor total de inventario: ", total)
+
+
+def alerta_reposicion(inventario):
+    for nombre, precio, stock in inventario:
+        if stock <= 10:
+            print("AVISO: ", nombre)
+
+
+inventario = cargar_inventario()
+
+imprimir_listado(inventario)
+
+valor_inventario(inventario)
+
+alerta_reposicion(inventario)

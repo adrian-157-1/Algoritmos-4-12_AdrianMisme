@@ -15,3 +15,55 @@ de coordenadas asociadas.
 cantidad de paradas registradas en su ruta de vuelo (la lista con mayor cantidad
 de elementos).
 """
+
+
+drones = {}
+
+
+def cargar_planes():
+    for i in range(3):
+        dron = input("ingrese identificador del dron: ")
+
+        cantidad = int(input("ingrese cantidad de paradas: "))
+
+        paradas = []
+
+        for j in range(cantidad):
+            latitud = float(input("ingrese latitud: "))
+
+            longitud = float(input("ingrese longitud: "))
+
+            paradas.append((latitud, longitud))
+
+        drones[dron] = paradas
+
+
+def imprimir_rutas():
+    for dron in drones:
+
+        print(dron, "-", drones[dron])
+
+
+def ruta_mas_larga():
+    mayor = 0
+    dron_mayor = ""
+
+    for dron in drones:
+        cantidad = len(drones[dron])
+
+        if cantidad > mayor:
+
+            mayor = cantidad
+            dron_mayor = dron
+
+    print("El dron con más paradas es:", dron_mayor)
+    print("Cantidad de paradas:", mayor)
+
+
+cargar_planes()
+
+print("RUTAS:")
+imprimir_rutas()
+
+print("RUTA MAS LARGA:")
+ruta_mas_larga()

@@ -14,3 +14,38 @@ utilizar índices numéricos como [0] o [1]).
 3. Filtrar hemisferio: Contar e informar cuántas de las cámaras se encuentran
 ubicadas en el hemisferio norte (latitud mayor a cero).
 """
+
+def cargar_coordenadas():
+    coordenadas = []
+
+    for i in range(4):
+        lat = float(input("ingrese la latitud: "))
+        lon = float(input("ingrese la longitud: "))
+
+        coordenadas.append((lat, lon))
+
+    return coordenadas
+
+
+def listar_posiciones(coordenadas):
+    for lat, lon in coordenadas:
+        print("Latitud: ", lat, "Longitud: ", lon)
+
+
+def filtrar_hemisferio(coordenadas):
+    contador = 0
+
+    for lat, lon in coordenadas:
+        if lat > 0:
+            contador += 1
+
+    return contador
+
+
+coordenadas = cargar_coordenadas()
+
+listar_posiciones(coordenadas)
+
+cantidad = filtrar_hemisferio(coordenadas)
+
+print("Cantidad de camaras en el hemisferio norte: ", cantidad)

@@ -14,3 +14,55 @@ artículos desempaquetando la tupla de manera directa en el bucle for.
 4. Alerta de Reposición: Imprimir el nombre de todos aquellos artículos cuyo stock
 sea menor o igual a 10 unidades para emitir un aviso de compra urgente.
 */
+
+function cargar_inventario() {
+    let inventario = []
+
+    for (let i = 0; i < 5; i++) {
+        let nombre = prompt("ingrese nombre del artIculo: ")
+        let precio = parseInt(prompt("ingrese precio: "))
+        let stock = parseInt(prompt("ingrese stock: "))
+
+        inventario.push([nombre, precio, stock])
+    }
+
+    return inventario
+}
+
+
+function imprimir_listado(inventario) {
+    for (let [nombre, precio, stock] of inventario) {
+        console.log("ArtIculo: ", nombre)
+        console.log("Precio: ", precio)
+        console.log("Stock: ", stock)
+        console.log("=======================")
+    }
+}
+
+
+function valor_inventario(inventario) {
+    let total = 0
+
+    for (let [nombre, precio, stock] of inventario) {
+        total = total + precio * stock
+    }
+
+    console.log("Valor total de inventario: ", total)
+}
+
+
+function alerta_reposicion(inventario) {
+    for (let [nombre, precio, stock] of inventario) {
+        if (stock <= 10) {
+            console.log("AVISO: ", nombre)
+        }
+    }
+}
+
+let inventario = cargar_inventario()
+
+imprimir_listado(inventario)
+
+valor_inventario(inventario)
+
+alerta_reposicion(inventario)

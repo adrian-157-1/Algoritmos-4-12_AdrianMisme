@@ -15,3 +15,65 @@ en Watts acumulado en cada una de ellas.
 energía consume de toda la casa (el valor máximo individual dentro de todas las
 listas del diccionario), indicando en qué habitación se encuentra.
 """
+
+
+casa = {}
+
+
+def cargar_dispositivos():
+    for i in range(3):
+        habitacion = input("ingrese el nombre de la habitación: ")
+
+        dispositivos = []
+
+        continuar = "si"
+
+        while continuar == "si":
+            nombre = input("ingrese el nombre del dispositivo: ")
+
+            consumo = float(input("ingrese el consumo en Watts: "))
+
+            dispositivos.append((nombre, consumo))
+
+            continuar = input("desea cargar otro dispositivo? si/no: ")
+
+        casa[habitacion] = dispositivos
+
+
+def consumo_por_habitacion():
+    for habitacion in casa:
+        total = 0
+
+        for dispositivo in casa[habitacion]:
+
+            total = total + dispositivo[1]
+
+        print(habitacion, "->", total, "Watts")
+
+
+def dispositivo_critico():
+    mayor = 0
+    nombre_mayor = ""
+    habitacion_mayor = ""
+
+    for habitacion in casa:
+        for dispositivo in casa[habitacion]:
+
+            if dispositivo[1] > mayor:
+
+                mayor = dispositivo[1]
+                nombre_mayor = dispositivo[0]
+                habitacion_mayor = habitacion
+
+    print("Dispositivo que mas consume:", nombre_mayor)
+    print("Habitacion:", habitacion_mayor)
+    print("Consumo:", mayor, "Watts")
+
+
+cargar_dispositivos()
+
+print("CONSUMO POR HABITACIÓN:")
+consumo_por_habitacion()
+
+print("DISPOSITIVO CRITICO:")
+dispositivo_critico()

@@ -16,3 +16,36 @@ Ejemplo de Entrada: [[&quot;Carlos&quot;, 1], [&quot;Ana&quot;, 3], [&quot;Rober
 Esperada: Atiende primero a Ana (Nivel 3). Si se vuelve a llamar a la función,
 la siguiente será Lucía (Nivel 3).
 """
+
+cola_espera = []
+
+cantidad = int(input("ingrese cuantos pacientes hay: "))
+
+for i in range(cantidad):
+
+    nombre = input("ingrese el nombre del paciente: ")
+    prioridad = int(input("ingrese la prioridad (1, 2 o 3): "))
+
+    cola_espera.append([nombre, prioridad])
+
+
+def atender_siguiente(cola_espera):
+    mayor = 0
+    posicion = 0
+
+    for i in range(len(cola_espera)):
+
+        if cola_espera[i][1] > mayor:
+            mayor = cola_espera[i][1]
+            posicion = i
+
+    paciente = cola_espera[posicion]
+
+    cola_espera.pop(posicion)
+
+    return f"Atiende a {paciente[0]} (Nivel {paciente[1]})"
+
+
+print(atender_siguiente(cola_espera))
+
+print(atender_siguiente(cola_espera))

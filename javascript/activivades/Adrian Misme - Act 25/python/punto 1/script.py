@@ -12,3 +12,34 @@ mínimo.
 variables individuales (máxima y mínima) y mostrarlas en pantalla con un mensaje
 descriptivo.
 """
+
+
+def carga():
+    temperaturas = []
+
+    for i in range(6):
+        temp = int(input("ingrese la temperatura: "))
+        temperaturas.append(temp)
+
+    return temperaturas
+
+
+def procesar_extremos(temperaturas):
+    maximo = temperaturas[0]
+    minimo = temperaturas[0]
+
+    for temp in temperaturas:
+        if temp > maximo:
+            maximo = temp
+
+        if temp < minimo:
+            minimo = temp
+
+    return maximo, minimo
+
+temperaturas = carga()
+
+maxima, minima = procesar_extremos(temperaturas)
+
+print("Temperatura maxima: ", maxima)
+print("Temperatura minima: ", minima)

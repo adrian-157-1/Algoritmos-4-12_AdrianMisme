@@ -18,3 +18,39 @@ Esperada: Atiende primero a Ana (Nivel 3). Si se vuelve a llamar a la función,
 la siguiente será Lucía (Nivel 3).
 
 */
+
+let cola_espera = [];
+
+let cantidad = parseInt(prompt("Ingrese cuantos pacientes hay: "));
+
+for (let i = 0; i < cantidad; i++) {
+    let nombre = prompt("Ingrese el nombre del paciente: ");
+    let prioridad = parseInt(prompt("Ingrese la prioridad (1, 2 o 3): "));
+
+    cola_espera.push([nombre, prioridad]);
+}
+
+
+function atender_siguiente(cola_espera) {
+    let mayor = 0
+    let posicion = 0
+
+    for (let i = 0; i < cola_espera.length; i++) {
+
+        if (cola_espera[i][1] > mayor) {
+            mayor = cola_espera[i][1]
+            posicion = i
+        }
+    }
+
+    let paciente = cola_espera[posicion]
+
+    cola_espera.splice(posicion, 1)
+
+    return `Atiende a ${paciente[0]} (Nivel ${paciente[1]})`
+}
+
+
+console.log(atender_siguiente(cola_espera));
+
+console.log(atender_siguiente(cola_espera));
