@@ -22,21 +22,18 @@ if (nota) {
     document.getElementById("mensaje").textContent = nota
 }
 
-document.getElementById("guardar").addEventListener("click", guardarNota)
-document.getElementById("borrar").addEventListener("click", borrarNota)
 
-
-function guardarNota() {
+function guardarNota(){
     let nota = document.getElementById("nota").value
 
-    sessionStorage.setItem("nota", nota);
+    sessionStorage.setItem("nota", nota)
 
     document.getElementById("mensaje").textContent = nota
 }
 
 
-function borrarNota() {
-    sessionStorage.removeItem("nota");
+function borrarNota(){
+    sessionStorage.removeItem("nota")
 
     document.getElementById("mensaje").textContent = ""
 }
